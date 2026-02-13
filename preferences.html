@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preferences · Clothes Tinder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="screen--prefs">
+    <h2 class="prefs-title">Set your preferences</h2>
+    <p class="prefs-subtitle">We’ll use these to show you clothes you’ll love.</p>
+
+    <form class="prefs-form" action="#" method="get">
+      <section class="prefs-section">
+        <h3 class="prefs-heading">Gender</h3>
+        <div class="prefs-options prefs-options--single">
+          <label class="prefs-option">
+            <input type="radio" name="gender" value="men" class="prefs-input">
+            <span class="prefs-chip">Men</span>
+          </label>
+          <label class="prefs-option">
+            <input type="radio" name="gender" value="women" class="prefs-input">
+            <span class="prefs-chip">Women</span>
+          </label>
+          <label class="prefs-option">
+            <input type="radio" name="gender" value="unisex" class="prefs-input">
+            <span class="prefs-chip">Unisex</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="prefs-section">
+        <h3 class="prefs-heading">Style</h3>
+        <div class="prefs-options prefs-options--single">
+          <label class="prefs-option">
+            <input type="radio" name="style" value="casual" class="prefs-input">
+            <span class="prefs-chip">Casual</span>
+          </label>
+          <label class="prefs-option">
+            <input type="radio" name="style" value="formal" class="prefs-input">
+            <span class="prefs-chip">Formal</span>
+          </label>
+          <label class="prefs-option">
+            <input type="radio" name="style" value="sporty" class="prefs-input">
+            <span class="prefs-chip">Sporty</span>
+          </label>
+          <label class="prefs-option">
+            <input type="radio" name="style" value="streetwear" class="prefs-input">
+            <span class="prefs-chip">Streetwear</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="prefs-section">
+        <h3 class="prefs-heading">Colors you like</h3>
+        <div class="prefs-options prefs-options--multi">
+          <label class="prefs-option">
+            <input type="checkbox" name="colors" value="black" class="prefs-input">
+            <span class="prefs-chip">Black</span>
+          </label>
+          <label class="prefs-option">
+            <input type="checkbox" name="colors" value="white" class="prefs-input">
+            <span class="prefs-chip">White</span>
+          </label>
+          <label class="prefs-option">
+            <input type="checkbox" name="colors" value="neutral" class="prefs-input">
+            <span class="prefs-chip">Neutral</span>
+          </label>
+          <label class="prefs-option">
+            <input type="checkbox" name="colors" value="colorful" class="prefs-input">
+            <span class="prefs-chip">Colorful</span>
+          </label>
+        </div>
+      </section>
+
+      <section class="prefs-section">
+        <h3 class="prefs-heading">Size</h3>
+        <div class="prefs-options prefs-options--single">
+          <label class="prefs-option">
+            <input type="radio" name="size" value="s" class="prefs-input">
+            <span class="prefs-chip">S</span>
+          </label>
+          <label class="prefs-option">
+            <input type="radio" name="size" value="m" class="prefs-input">
+            <span class="prefs-chip">M</span>
+          </label>
+          <label class="prefs-option">
+            <input type="radio" name="size" value="l" class="prefs-input">
+            <span class="prefs-chip">L</span>
+          </label>
+          <label class="prefs-option">
+            <input type="radio" name="size" value="xl" class="prefs-input">
+            <span class="prefs-chip">XL</span>
+          </label>
+        </div>
+      </section>
+
+      <button type="submit" class="vutton1 prefs-submit">
+        Continue
+        <div class="icon">
+          <svg height="24" width="24" viewBox="0 0 24 24">
+            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
+          </svg>
+        </div>
+      </button>
+    </form>
+  </div>
+</body>
+</html>
