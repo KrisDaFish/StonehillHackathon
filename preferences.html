@@ -11,7 +11,7 @@
     <h2 class="prefs-title">Set your preferences</h2>
     <p class="prefs-subtitle">We’ll use these to show you clothes youll love.</p>
 
-    <form class="prefs-form" action="#" method="get">
+    <form class="prefs-form" action="swipe.html" method="get">
       <section class="prefs-section">
         <h3 class="prefs-heading">Gender</h3>
         <div class="prefs-options">
@@ -96,7 +96,45 @@
         </div>
       </section>
 
-      <button type="submit" class="prefs-submit">Continue</button>
+      <section class="prefs-section">
+        <h3 class="prefs-heading">Occasion</h3>
+        <div class="prefs-options">
+          <label class="prefs-option">
+            <input type="radio" name="occasion" value="birthday" class="prefs-input">
+            <span class="prefs-chip">Birthday</span>
+          </label>
+          <label class="prefs-option">
+            <input type="radio" name="occasion" value="party" class="prefs-input">
+            <span class="prefs-chip">Party</span>
+          </label>
+          <label class="prefs-option">
+            <input type="radio" name="occasion" value="wedding" class="prefs-input">
+            <span class="prefs-chip">Wedding</span>
+          </label>
+          <label class="prefs-option">
+            <input type="radio" name="occasion" value="other" class="prefs-input">
+            <span class="prefs-chip">Other</span>
+          </label>
+        </div>
+      </section>
+
+      <button type="submit" class="cssbuttons-io-button prefs-submit">
+        Continue
+        <div class="icon">
+          <svg
+            height="24"
+            width="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </div>
+      </button>
     </form>
   </div>
 </body>

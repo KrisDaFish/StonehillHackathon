@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Felicitux · Browse</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="swipe-screen">
+    <header class="swipe-header">
+      <h2 class="swipe-title">Browse picks for you</h2>
+      <p class="swipe-subtitle">Swipe right to save, left to skip.</p>
+    </header>
+
+    <main id="swipe-root">
+      <div id="swipe-card-container"></div>
+      <div class="swipe-actions">
+        <button class="swipe-btn swipe-btn--nope" id="btn-nope">✕</button>
+        <button class="swipe-btn swipe-btn--like" id="btn-like">♥</button>
+      </div>
+      <p class="swipe-empty" id="swipe-empty" style="display:none;">You reached the end. Refresh to see them again.</p>
+    </main>
+  </div>
+
+  <script>
+    var params = new URLSearchParams(window.location.search);
+    var prefs = {
+      gender: params.get("gender"),
+      style: params.get("style"),
+      size: params.get("size"),
+      occasion: params.get("occasion"),
+      colors: params.getAll("colors")
+    };
+
+    var products = [
+      {
+        id: 1,
+        name: "Black Party Dress",
+        price: 59,
+        gender: "women",
+        style: "formal",
+        size: "m",
+        occasion: "party",
+        colors: ["black"],
+        tags: ["Women", "Formal", "Party"],
+        image: "images/look1.jpg"
+      },
+      {
+        id: 2,
+        name: "Casual Tee and Jeans",
+        price: 39,
+        gender: "men",
+        style: "casual",
+        size: "m",
+        occasion: "other",
+        colors: ["blue"],
+        tags: ["Men", "Casual", "Everyday"],
+        image: "images/look2.jpg"
+      },
+      {
+        id: 3,
+        name: "Sporty Athleisure Set",
+        price: 49,
+        gender: "unisex",
+        style: "sporty",
+        size: "l",
+        occasion: "other",
+        colors: ["neutral"],
+        tags: ["Unisex", "Sporty"],
+        image: "images/look3.jpg"
+      },
+      {
+        id: 4,
+        name: "Streetwear Hoodie Fit",
+        price: 69,
+        gender: "unisex",
+        style: "streetwear",
+        size: "m",
+        occasion: "party",
+        colors: ["colorful"],
+        tags: ["Unisex", "Streetwear"],
+        image: "images/look4.jpg"
+      }
+    ];
+
+    function matchPrefs(item, prefs) {
+      if (prefs.gender && item.gender !== prefs.gender) return false;
+      if (prefs.style && item.style !== prefs.style) return false;
+      if (prefs.size && item.size !== prefs.size) return false;
+      if (prefs.occasion && item.occasion !== prefs.occasion) return false;
+      if (prefs.colors && prefs.colors.length > 0) {
+        var hasColor = prefs.colors.some(function (c) {
+          return item.colors.indexOf(c) !== -1;
+        });
+        if (!hasColor) return false;
+      }
+      return true;
+    }
+
+    var queue = products.filter(function (p) {
+      return matchPrefs(p, prefs);
+    });
+
+    if (queue.length === 0) {
+      queue = products.slice();
+    }
+
+    var index = 0;
+    var container = document.getElementById("swipe-card-container");
+    var btnLike = document.getElementById("btn-like");
+    var btnNope = document.getElementById("btn-nope");
+    var emptyEl = document.getElementById("swipe-empty");
+
+    function renderCard() {
+      if (index >= queue.length) {
+        container.innerHTML = "";
+        emptyEl.style.display = "block";
+        btnLike.disabled = true;
+        btnNope.disabled = true;
+        return;
+      }
+      emptyEl.style.display = "none";
+      btnLike.disabled = false;
+      btnNope.disabled = false;
+      var item = queue[index];
+      container.innerHTML =
+        '<article class="swipe-card">' +
+        '<img class="swipe-image" src="' + item.image + '" alt="' + item.name + '">' +
+        '<div class="swipe-meta">' +
+        '<div class="swipe-meta-main">' +
+        '<div class="swipe-name">' + item.name + "</div>" +
+        '<div class="swipe-price">$' + item.price + "</div>" +
+        "</div>" +
+        '<div class="swipe-tags">' + item.tags.join(" · ") + "</div>" +
+        "</div>" +
+        "</article>";
+    }
+
+    function swipe(direction) {
+      var card = container.querySelector(".swipe-card");
+      if (!card) return;
+      if (direction === "like") {
+        card.classList.add("swipe-card--like");
+      } else {
+        card.classList.add("swipe-card--nope");
+      }
+      setTimeout(function () {
+        index += 1;
+        renderCard();
+      }, 220);
+    }
+
+    btnLike.addEventListener("click", function () {
+      swipe("like");
+    });
+
+    btnNope.addEventListener("click", function () {
+      swipe("nope");
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowRight") swipe("like");
+      if (event.key === "ArrowLeft") swipe("nope");
+    });
+
+    renderCard();
+  </script>
+</body>
+</html>
+

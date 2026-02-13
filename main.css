@@ -174,28 +174,132 @@ body {
 }
 
 .prefs-submit {
-  margin-top: 18px;
+  margin-top: 24px;
+}
+
+.swipe-screen {
   width: 100%;
-  height: 44px;
+  max-width: 640px;
+  padding: 28px;
+}
+
+.swipe-header {
+  margin-bottom: 18px;
+}
+
+.swipe-title {
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.swipe-subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.swipe-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.22);
+  background: #0f172a;
+  color: #f9fafb;
+  transition: transform 0.22s ease-out, opacity 0.22s ease-out;
+}
+
+.swipe-card--like {
+  transform: translateX(120%) rotate(8deg);
+  opacity: 0;
+}
+
+.swipe-card--nope {
+  transform: translateX(-120%) rotate(-8deg);
+  opacity: 0;
+}
+
+.swipe-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.swipe-meta {
+  padding: 14px 16px 16px;
+}
+
+.swipe-meta-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.swipe-name {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.swipe-price {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.swipe-tags {
+  font-size: 12px;
+  color: #cbd5f5;
+}
+
+.swipe-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.swipe-btn {
+  width: 52px;
+  height: 52px;
   border-radius: 999px;
   border: 0;
-  background: #0f172a;
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 20px;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease, color 0.16s ease;
 }
 
-.prefs-submit:hover {
-  background: #020617;
-  transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.2);
+.swipe-btn--nope {
+  background: #fee2e2;
+  color: #b91c1c;
 }
 
-.prefs-submit:active {
+.swipe-btn--like {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.swipe-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.22);
+}
+
+.swipe-btn:active {
   transform: translateY(0);
   box-shadow: none;
+}
+
+.swipe-empty {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 15px;
+  color: #64748b;
 }
 
 @keyframes tagline-in {
