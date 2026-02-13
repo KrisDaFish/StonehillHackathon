@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Preferences · Clothes Tinder</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -17,7 +14,7 @@
     <form class="prefs-form" action="#" method="get">
       <section class="prefs-section">
         <h3 class="prefs-heading">Gender</h3>
-        <div class="prefs-options prefs-options--single">
+        <div class="prefs-options">
           <label class="prefs-option">
             <input type="radio" name="gender" value="men" class="prefs-input">
             <span class="prefs-chip">Men</span>
@@ -35,7 +32,7 @@
 
       <section class="prefs-section">
         <h3 class="prefs-heading">Style</h3>
-        <div class="prefs-options prefs-options--single">
+        <div class="prefs-options">
           <label class="prefs-option">
             <input type="radio" name="style" value="casual" class="prefs-input">
             <span class="prefs-chip">Casual</span>
@@ -57,7 +54,7 @@
 
       <section class="prefs-section">
         <h3 class="prefs-heading">Colors you like</h3>
-        <div class="prefs-options prefs-options--multi">
+        <div class="prefs-options">
           <label class="prefs-option">
             <input type="checkbox" name="colors" value="black" class="prefs-input">
             <span class="prefs-chip">Black</span>
@@ -79,7 +76,7 @@
 
       <section class="prefs-section">
         <h3 class="prefs-heading">Size</h3>
-        <div class="prefs-options prefs-options--single">
+        <div class="prefs-options">
           <label class="prefs-option">
             <input type="radio" name="size" value="s" class="prefs-input">
             <span class="prefs-chip">S</span>
@@ -99,14 +96,7 @@
         </div>
       </section>
 
-      <button type="submit" class="vutton1 prefs-submit">
-        Continue
-        <div class="icon">
-          <svg height="24" width="24" viewBox="0 0 24 24">
-            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
-          </svg>
-        </div>
-      </button>
+      <button type="submit" class="button prefs-submit">Continue</button>
     </form>
   </div>
 </body>

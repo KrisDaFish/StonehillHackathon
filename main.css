@@ -1,142 +1,73 @@
 body {
   margin: 0;
-  min-height: 100dvh;
-  background: #0a0a0a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+  padding: 20px;
   box-sizing: border-box;
 }
 
 .screen {
   width: 100%;
-  max-width: 390px;
-  min-height: 100dvh;
+  max-width: 600px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px;
-  box-sizing: border-box;
+  min-height: 80vh;
+  padding: 20px;
 }
 
 .screen h1 {
-  font-family: 'Outfit', sans-serif;
-  font-size: 64px;
-  font-weight: 800;
+  font-size: 48px;
+  font-weight: bold;
   text-align: center;
-  letter-spacing: -1.92px;
-  line-height: 1.1;
-  margin: 0;
-  background: linear-gradient(135deg, #fff 0%, #e0d4f7 50%, #c4b0f0 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  margin: 0 0 20px;
+  color: #000000;
 }
 
 .tagline {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  color: #a0a0a0;
+  color: #666666;
   font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.32px;
-  margin: 8px 0 32px;
+  margin: 0 0 40px;
   text-align: center;
-  min-height: 24px;
 }
 
-.tagline .typewriter {
+.button {
   display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 0;
-  border-right: 2px solid #a370f0;
-  animation: typewriter 2.2s steps(30) 0.5s forwards, blink 0.7s step-end infinite 2.8s;
-}
-
-@keyframes typewriter {
-  from { width: 0; }
-  to { width: 336px; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-}
-
-.vutton1 {
-  display: flex;
-  align-items: center;
-  position: relative;
-  height: 45px;
-  padding: 6px 53px 6px 19px;
-  font-family: 'Syne', sans-serif;
-  font-size: 17px;
-  font-weight: 600;
-  letter-spacing: 0.85px;
-  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  color: #ffffff;
   text-decoration: none;
-  background: #a370f0;
-  border: none;
-  border-radius: 14px;
-  box-shadow: inset 0 0 26px -10px #714da6;
-  overflow: hidden;
+  background: #000000;
+  border: 1px solid #000000;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.vutton1 .icon {
-  position: absolute;
-  right: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 35px;
-  height: 35px;
-  margin-left: 16px;
-  background: white;
-  border-radius: 11px;
-  box-shadow: 2px 2px 10px 3px #7b52b9;
-  transition: all 0.3s;
-}
-
-.vutton1 .icon svg {
-  width: 19px;
-  color: #7b52b9;
-  transition: transform 0.3s;
-}
-
-.vutton1:hover .icon {
-  width: calc(100% - 10px);
-}
-
-.vutton1:hover .icon svg {
-  transform: translateX(2px);
-}
-
-.vutton1:active .icon {
-  transform: scale(0.95);
+.button:hover {
+  background: #333333;
 }
 
 .screen--prefs {
-  justify-content: flex-start;
-  min-height: auto;
-  padding: 48px 24px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 .prefs-title {
-  font-family: 'Outfit', sans-serif;
-  font-size: 36px;
-  font-weight: 800;
-  color: #fff;
-  margin: 0 0 4px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #000000;
+  margin: 0 0 10px;
   text-align: center;
 }
 
 .prefs-subtitle {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  color: #a0a0a0;
-  font-size: 15px;
-  margin: 0 0 32px;
+  color: #666666;
+  font-size: 14px;
+   margin: 0 0 30px;
   text-align: center;
 }
 
@@ -145,22 +76,20 @@ body {
 }
 
 .prefs-section {
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 .prefs-heading {
-  font-family: 'Syne', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: #c4b0f0;
-  margin: 0 0 12px;
-  letter-spacing: 0.28px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+  margin: 0 0 15px;
 }
 
 .prefs-options {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
 }
 
 .prefs-option {
@@ -176,35 +105,22 @@ body {
 
 .prefs-chip {
   display: inline-block;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  color: #e0d4f7;
+  font-size: 14px;
+  color: #000000;
   padding: 8px 16px;
-  border: 2px solid rgba(163, 112, 240, 0.4);
-  border-radius: 32px;
-  background: rgba(163, 112, 240, 0.2);
-  transition: background 0.2s, border-color 0.2s, color 0.2s;
-}
-
-.prefs-option:hover .prefs-chip {
-  background: rgba(163, 112, 240, 0.35);
-  border-color: rgba(163, 112, 240, 0.6);
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background: #ffffff;
 }
 
 .prefs-input:checked + .prefs-chip {
-  color: #fff;
-  background: #a370f0;
-  border-color: #a370f0;
-}
-
-.prefs-input:focus-visible + .prefs-chip {
-  outline: 2px solid #c4b0f0;
-  outline-offset: 2px;
+  color: #ffffff;
+  background: #000000;
+  border-color: #000000;
 }
 
 .prefs-submit {
-  margin-top: 32px;
+  margin-top: 30px;
   width: 100%;
-  justify-content: center;
+  text-align: center;
 }
