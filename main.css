@@ -1,74 +1,118 @@
-body {
-  margin: 0;
-  min-height: 100vh;
-  background: #ffffff;
-  font-family: Arial, sans-serif;
-  padding: 20px;
+* {
   box-sizing: border-box;
 }
 
-.screen {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 24px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Arial, sans-serif;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
-  padding: 20px;
+}
+
+.screen,
+.screen--prefs {
+  width: 100%;
+  max-width: 640px;
+  padding: 28px;
+}
+
+.screen {
+  text-align: center;
 }
 
 .screen h1 {
-  font-size: 48px;
-  font-weight: bold;
-  text-align: center;
-  margin: 0 0 20px;
-  color: #000000;
+  margin: 0 0 10px;
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, #a855f7, #6366f1, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .tagline {
-  color: #666666;
+  margin: 0 0 26px;
   font-size: 16px;
-  margin: 0 0 40px;
-  text-align: center;
+  color: #64748b;
+  opacity: 0;
+  animation: tagline-in 0.5s ease-out forwards;
 }
 
-.button {
-  display: inline-block;
-  padding: 12px 24px;
-  font-size: 16px;
+.cssbuttons-io-button {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  height: 2.8em;
+  padding: 0.35em 3.3em 0.35em 1.2em;
+  border-radius: 999px;
+  border: 0;
+  background: linear-gradient(135deg, #a855f7, #6366f1);
   color: #ffffff;
-  text-decoration: none;
-  background: #000000;
-  border: 1px solid #000000;
-  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 14px 30px rgba(99, 102, 241, 0.25);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
 }
 
-.button:hover {
-  background: #333333;
+.cssbuttons-io-button .icon {
+  position: absolute;
+  right: 0.35em;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.22s ease;
+  overflow: hidden;
 }
 
-.screen--prefs {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 40px 20px;
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  color: #4f46e5;
+  transition: transform 0.22s ease;
+}
+
+.cssbuttons-io-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(99, 102, 241, 0.32);
+  filter: saturate(1.05);
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.7em);
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(2px);
+}
+
+.cssbuttons-io-button:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 24px rgba(99, 102, 241, 0.24);
 }
 
 .prefs-title {
+  margin: 0 0 8px;
   font-size: 32px;
-  font-weight: bold;
-  color: #000000;
-  margin: 0 0 10px;
-  text-align: center;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .prefs-subtitle {
-  color: #666666;
+  margin: 0 0 22px;
+  color: #64748b;
   font-size: 14px;
-   margin: 0 0 30px;
-  text-align: center;
 }
 
 .prefs-form {
@@ -76,14 +120,20 @@ body {
 }
 
 .prefs-section {
-  margin-bottom: 30px;
+  padding: 14px 0 18px;
+  border-top: 1px solid #eef2ff;
+}
+
+.prefs-section:first-child {
+  border-top: 0;
+  padding-top: 0;
 }
 
 .prefs-heading {
-  font-size: 16px;
-  font-weight: bold;
-  color: #000000;
-  margin: 0 0 15px;
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
 }
 
 .prefs-options {
@@ -104,23 +154,73 @@ body {
 }
 
 .prefs-chip {
-  display: inline-block;
-  font-size: 14px;
-  color: #000000;
-  padding: 8px 16px;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #e2e8f0;
   background: #ffffff;
+  color: #0f172a;
+  font-size: 13px;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .prefs-input:checked + .prefs-chip {
+  background: #0f172a;
+  border-color: #0f172a;
   color: #ffffff;
-  background: #000000;
-  border-color: #000000;
+  transform: translateY(-1px);
 }
 
 .prefs-submit {
-  margin-top: 30px;
+  margin-top: 18px;
   width: 100%;
-  text-align: center;
+  height: 44px;
+  border-radius: 999px;
+  border: 0;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
+
+.prefs-submit:hover {
+  background: #020617;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.2);
+}
+
+.prefs-submit:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+@keyframes tagline-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 16px;
+  }
+
+  .screen,
+  .screen--prefs {
+    padding: 18px;
+  }
+
+  .screen h1 {
+    font-size: 40px;
+  }
+}
+
